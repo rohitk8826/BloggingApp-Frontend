@@ -3,7 +3,7 @@ import { dummyBlogs } from "../data";
 import BlogCard from "../components/BlogCard";
 import { Link } from "react-router";
 import axios from "axios";
-import { toast } from "react-toastify"
+import { toast } from "react-toastify";
 
 const HomePage = function () {
   const [recentBlogs, setRecentBlogs] = useState([]);
@@ -12,7 +12,9 @@ const HomePage = function () {
   useEffect(function () {
     async function fetchRecentBlogs() {
       try {
-        const response = await axios.get("http://localhost:8080/api/v1/blogs");
+        const response = await axios.get(
+          "https://bloggingapp-backend-10vl.onrender.com/api/v1/blogs"
+        );
         setRecentBlogs(response.data);
       } catch (error) {
         console.log(error);

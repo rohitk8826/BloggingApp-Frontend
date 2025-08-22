@@ -32,7 +32,9 @@ const SingleBlog = function () {
 
   async function deleteBlog(id) {
     try {
-      await axios.delete(`http://localhost:8080/api/v1/blogs/${id}`);
+      await axios.delete(
+        `https://bloggingapp-backend-10vl.onrender.com/api/v1/blogs/${id}`
+      );
       toast("Blog deleted!!!");
       navigate("/blogs");
     } catch (error) {

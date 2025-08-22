@@ -29,9 +29,12 @@ const AddBlog = function () {
 
     try {
       setIsLoading(true);
-      await axios.post("http://localhost:8080/api/v1/blogs", newBlog);
+      await axios.post(
+        "https://bloggingapp-backend-10vl.onrender.com/api/v1/blogs",
+        newBlog
+      );
       navigate("/blogs");
-      toast("New Blog Added!!!")
+      toast("New Blog Added!!!");
     } catch (error) {
       console.log(error);
       toast("Error creating blog. Please try again!!!");

@@ -15,7 +15,7 @@ const SingleBlog = function () {
       async function fetchSingleBlog() {
         try {
           const response = await axios.get(
-            `http://localhost:8080/api/v1/blogs/${id}`
+            `https://bloggingapp-backend-10vl.onrender.com/api/v1/blogs/${id}`
           );
           setBlog(response.data);
           console.log(response.data);
